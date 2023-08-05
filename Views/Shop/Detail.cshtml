@@ -1,0 +1,22 @@
+﻿@model Product
+<section style="margin:100px 0px">
+    <div class="container" >
+        <div class="row">
+            <div class="col-6">
+                <div class="divimg" style="margin:auto; width:400px; height:500px">
+                    <img src="~/img/@Model.Image" style="width:100%; height:100%" />
+                </div>
+            </div>
+            <div class="col-6">
+                <div style="padding:30px 40px 0px 0px">
+                    <h2>@Model.Name</h2>
+                    <h4>@Model.Price</h4>
+                    <div class="des">
+                        @Model.ProductDetail.Description
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

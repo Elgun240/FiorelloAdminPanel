@@ -1,0 +1,13 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Are you sure to delete this category</h1>
+<h4>@Model.Name</h4>
+
+<form method="post">
+    
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a class="btn btn-secondary text-light">Go Back</a>
+</form>

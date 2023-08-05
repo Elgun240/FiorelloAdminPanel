@@ -1,0 +1,45 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- PRODUCTS START -->
+
+<section id="products">
+    <div class="container">
+
+        <div class="row" id="myProductsList">
+            @foreach (Product product in Model)
+            {
+                <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
+                    <div class="product-item text-center" >
+                        <div class="img">
+                            <a asp-controller="Shop" asp-action="Detail" asp-route-id="@product.Id">
+                                <img src="~/img/@product.Image" class="img-fluid" alt="">
+                            </a>
+                        </div>
+                        <div class="title mt-3">
+                            <h6>@product.Name</h6>
+                        </div>
+                        <div class="price">
+                            <span class="text-black-50">Add to cart</span>
+                            <span class="text-black-50">@product.Price</span>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+
+        <input type="hidden" value="@ViewBag.ProductCount" id="product-count" />
+
+        <div class="d-flex justify-content-center mt-3">
+            <button id="loadMoreButton" class="btn btn-success">Load More</button>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCTS END -->
+@section Scripts{ 
+    <script asp-append-version="true" src="~/js/loadmore.js"></script>
+}
